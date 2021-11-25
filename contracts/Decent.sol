@@ -462,8 +462,8 @@
      uint256 private _previousBuyBackFee = _buybackFee;
 
  
-     address public marketingAddress;
-     address public buybackAddress;
+     address public marketingAddress = 0x76521A0B04F31F234eee827633737C728ca1557B;
+     address public buybackAddress = 0x811F903305fbF08983cee39527f2390b2F920cED;
 
 
      IUniswapV2Router02 public immutable uniswapV2Router;
@@ -513,7 +513,7 @@
      constructor () {
          _rOwned[_msgSender()] = _rTotal;
          
-         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3);
+         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
          uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
              .createPair(address(this), _uniswapV2Router.WETH());
  
